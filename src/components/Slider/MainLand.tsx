@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css/bundle';
 import 'swiper/css/effect-fade';
+import landingPageImage from '@/public/images/site/LANDING_PAGE.png';
 
 
 const MainLand = () => {
@@ -35,7 +36,7 @@ const MainLand = () => {
                                     </div>
                                     <div className="sub-img absolute left-0 top-0 w-full h-full z-[-1]">
                                     <Image
-                                        src={'/images/site/LANDING_PAGE.png'}
+                                        src={landingPageImage}
                                         width={1000}
                                         height={1000}
                                         alt='landing'

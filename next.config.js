@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const isGithubPages = process.env.NODE_ENV === 'production';
-const repo = 'GreenArk-V1'; // <<< replace with your GitHub repo name
+const repo = 'GreenArk-V1';
 
 const nextConfig = {
     reactStrictMode: true,
     srcDir: 'src',
-    assetPrefix: isGithubPages ? `/${repo}/.` : '',
+    assetPrefix: isGithubPages ? `/${repo}/` : '',
     basePath: isGithubPages ? `/${repo}` : '',
 }
 
