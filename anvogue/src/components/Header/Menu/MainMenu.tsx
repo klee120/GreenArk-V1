@@ -95,18 +95,18 @@ const MainMenu: React.FC<Props> = ({ props }) => {
                         <div className="menu-main h-full xl:w-full flex items-center justify-center max-lg:hidden xl:absolute xl:top-1/2 xl:left-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2">
                             <ul className='flex items-center gap-8 h-full'>
                                 <li className='h-full relative'>
-                                    <Link href="/shop/products" className='text-button-uppercase duration-300 h-full flex items-center justify-center'>
+                                    <Link href="/products" className='text-button-uppercase duration-300 h-full flex items-center justify-center'>
                                         Products
                                     </Link>
                                 </li>
                                 <li className='h-full relative'>
-                                    <Link href="/pages/about" className='text-button-uppercase duration-300 h-full flex items-center justify-center'>
+                                    <Link href="/about" className='text-button-uppercase duration-300 h-full flex items-center justify-center'>
                                         About Us
                                     </Link>
                                 </li>
                                 <li className='h-full relative'>
-                                    <Link href="/pages/contact" className='text-button-uppercase duration-300 h-full flex items-center justify-center'>
-                                        Contact Us
+                                    <Link href="/order" className='text-button-uppercase duration-300 h-full flex items-center justify-center'>
+                                        Order Here
                                     </Link>
                                 </li>
                             </ul>

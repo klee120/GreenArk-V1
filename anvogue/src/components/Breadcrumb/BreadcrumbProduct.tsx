@@ -28,9 +28,9 @@ const BreadcrumbProduct: React.FC<Props> = ({ data, productPage, productId }) =>
                         <div className="left flex items-center gap-1">
                             <Link href={'/'} className='caption1 text-secondary2 hover:underline'>Homepage</Link>
                             <Icon.CaretRight size={12} className='text-secondary2' />
-                            <div className='caption1 text-secondary2'>Product</div>
+                            <Link href={'/products'} className='caption1 text-secondary2 hover:underline'>Products</Link>
                             <Icon.CaretRight size={12} className='text-secondary2' />
-                            <div className='caption1 capitalize'>{`Product ${productPage}`}</div>
+                            <div className='caption1 capitalize'>{`${productPage}`}</div>
                         </div>
                         <div className="right flex items-center gap-3">
                             {productId !== null && Number(productId) >= 2 ? (

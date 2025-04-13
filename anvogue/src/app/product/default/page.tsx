@@ -17,12 +17,13 @@ const ProductDefault = () => {
     if (productId === null) {
         productId = '1'
     }
+    const productName = productData.find(product => product.id === productId)?.name ?? '';
 
     return (
         <>
             <div id="header" className='relative w-full'>
                 <MenuOne props="bg-white" />
-                <BreadcrumbProduct data={productData} productPage='default' productId={productId} />
+                <BreadcrumbProduct data={productData} productPage={productName} productId={productId} />
             </div>
             <Default data={productData} productId={productId} />
             <Footer />

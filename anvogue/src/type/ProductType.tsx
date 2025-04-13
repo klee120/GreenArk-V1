@@ -69,6 +69,31 @@ export const AllBrands: string[] = [
     'Blendtec'
 ];
 
+export const OtherBrands: string[] = [
+    'Routin 1883',
+    "Caffe D'Amore",
+    "Caffe D'Vitta",
+    'Ghiradelli',
+    'Monin',
+    'Torani',
+    'Hollander',
+    'Big Train',
+    'Da Vinci ',
+    'Oregon Chai',
+    'ProGel',
+    'Cappuccine',
+    'Teazone',
+    'Frostline',
+    'Dole',
+    'Cafvina',
+    'Califia',
+    'Pacific Foods',
+    'C&H',
+    'Total Clean',
+    'Vitamix',
+    'Blendtec'
+];
+
 export const CategoryImagePaths: { [key: string]: string } = {
     'Deli / Soup Container' : '/images/category/soup container.png',
     'Fold-To-Go & Trays' : '/images/category/togo.png'

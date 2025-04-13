@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import * as Icon from "@phosphor-icons/react/dist/ssr";
-import { ProductType, AllBrands, AllCategories } from '@/type/ProductType'
+import { ProductType, AllBrands, AllCategories, OtherBrands } from '@/type/ProductType'
 import Product from '../Product/Product';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css'
@@ -13,12 +13,13 @@ interface Props {
     data: Array<ProductType>
     productPerPage: number
     dataType: string | null | undefined
+    dataBrand: string | null | undefined
 }
 
-const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType }) => {
+const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType, dataBrand }) => {
     const [sortOption, setSortOption] = useState('');
     const [type, setType] = useState<string | null | undefined>(dataType)
-    const [brand, setBrand] = useState<string | null>()
+    const [brands, setBrands] = useState<string[]>(dataBrand ? [dataBrand] : []);
     const [currentPage, setCurrentPage] = useState(0);
     const productsPerPage = productPerPage;
     const offset = currentPage * productsPerPage;
@@ -33,11 +34,24 @@ const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType }) =>
         setCurrentPage(0);
     }
 
-    const handleBrand = (brand: string) => {
-        setBrand((prevBrand) => (prevBrand === brand ? null : brand));
-        setCurrentPage(0);
+    const handleBrand = (item: string) => {
+        if (brands.includes(item)) {
+          setBrands(brands.filter((brand) => brand !== item));
+        } else {
+          setBrands([...brands, item]);
+        }
+      };
+      
+    useEffect(() => {
+    if (dataBrand === 'other') {
+        setBrands(OtherBrands);
+    } else if (dataBrand) {
+        setBrands([dataBrand]);
+    } else {
+        setBrands([]);
     }
-
+    }, [dataBrand]);
+      
 
     // Filter product
     let filteredData = data.filter(product => {
@@ -53,9 +67,9 @@ const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType }) =>
         }
 
         let isBrandMatched = true;
-        if (brand) {
-            isBrandMatched = product.brand === brand;
-        }
+        if (brands.length > 0) {
+            isBrandMatched = brands.includes(product.brand);
+        }          
 
         return isTypeMatched && isDataTypeMatched && isBrandMatched
     })
@@ -67,7 +81,7 @@ const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType }) =>
 
     const totalProducts = filteredData.length
     const selectedType = type
-    const selectedBrand = brand
+    // const selectedBrand = brand
 
 
     if (filteredData.length === 0) {
@@ -108,7 +122,7 @@ const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType }) =>
         dataType = null
         setSortOption('');
         setType(null);
-        setBrand(null);
+        setBrands([]);
         setCurrentPage(0);
         handleType(null)
     };
@@ -137,7 +151,7 @@ const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType }) =>
                     <div className="flex max-md:flex-wrap max-md:flex-col-reverse gap-y-8">
                         <div className="sidebar lg:w-1/4 md:w-1/3 w-full md:pr-12">
                             <div className="filter-type pb-8 border-b border-line">
-                                <div className="heading6">Products Type</div>
+                                <div className="heading6">Product Type</div>
                                 <div className="list-type mt-4">
                                     {AllCategories.map((item, idx) => (
                                         <div
@@ -154,7 +168,7 @@ const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType }) =>
                                 </div>
                             </div>
                             <div className="filter-brand mt-8">
-                                <div className="heading6">Brands</div>
+                                <div className="heading6">Brand</div>
                                 <div className="list-brand mt-4">
                                     {AllBrands.map((item, index) => (
                                         <div key={index} className="brand-item flex items-center justify-between">
@@ -164,7 +178,7 @@ const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType }) =>
                                                         type="checkbox"
                                                         name={item}
                                                         id={item}
-                                                        checked={brand === item}
+                                                        checked={brands.includes(item)}
                                                         onChange={() => handleBrand(item)} />
                                                     <Icon.CheckSquare size={20} weight='fill' className='icon-checkbox' />
                                                 </div>
@@ -186,7 +200,7 @@ const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType }) =>
                                     <span className='text-secondary pl-1'>Products Found</span>
                                 </div>
                                 {
-                                    (selectedType || selectedBrand) && (
+                                    (selectedType || brands.length > 0) && (
                                         <>
                                             <div className="list flex items-center gap-3">
                                                 <div className='w-px h-4 bg-line'></div>
@@ -196,19 +210,36 @@ const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType }) =>
                                                         <span>{selectedType}</span>
                                                     </div>
                                                 )}
-                                                {selectedBrand && (
-                                                    <div className="item flex items-center px-2 py-1 gap-1 bg-linear rounded-full capitalize" onClick={() => { setBrand(null) }}>
-                                                        <Icon.X className='cursor-pointer' />
-                                                        <span>{selectedBrand}</span>
+                                                <div className="flex flex-wrap gap-2 items-center">
+                                                {brands.map((brand) => (
+                                                    <div
+                                                    key={brand}
+                                                    className="item flex items-center px-2 py-1 gap-1 bg-linear rounded-full capitalize"
+                                                    onClick={() => setBrands(brands.filter((b) => b !== brand))}
+                                                    >
+                                                    <Icon.X className="cursor-pointer" />
+                                                    <span>{brand}</span>
                                                     </div>
-                                                )}
-                                            </div>
-                                            <div
-                                                className="clear-btn flex items-center px-2 py-1 gap-1 rounded-full border border-red cursor-pointer"
-                                                onClick={handleClearAll}
-                                            >
-                                                <Icon.X color='rgb(219, 68, 68)' className='cursor-pointer' />
-                                                <span className='text-button-uppercase text-red'>Clear All</span>
+                                                ))}
+
+                                                <div
+                                                    className={`clear-btn flex items-center px-2 py-1 gap-1 rounded-full border cursor-pointer ${
+                                                    'border-red'
+                                                    }`}
+                                                    onClick={handleClearAll}
+                                                >
+                                                    <Icon.X
+                                                    color={'rgb(219, 68, 68)'}
+                                                    className="cursor-pointer"
+                                                    />
+                                                    <span
+                                                    className={`text-button-uppercase ${'text-red'
+                                                    }`}
+                                                    >
+                                                    Clear All
+                                                    </span>
+                                                </div>
+                                                </div>
                                             </div>
                                         </>
                                     )
