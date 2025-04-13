@@ -15,8 +15,8 @@ const serverTimeLeft: CountdownTimeType = countdownTime();
 const instrument = Instrument_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Anvogue',
-  description: 'Multipurpose eCommerce Template',
+  title: 'GreenArk Supply',
+  description: 'Sustainable Packaging Options',
 }
 
 export default function RootLayout({
