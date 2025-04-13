@@ -291,7 +291,7 @@ const Product: React.FC<ProductProps> = ({ data, type }) => {
                             </div> */}
                         </div>
                         <div className="product-infor mt-3 lg:mb-5">
-                            <div className="product-name text-title duration-300">{data.name}</div>
+                            <div className="heading7 font-medium">{data.name}</div>
                         </div>
                     </div>
                 </div>

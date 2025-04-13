@@ -33,16 +33,12 @@ export const AllCategories: string[] = [
     'Utensils',
     'Appliance & Tools',
     'Plates',
-    'Bowl',
     'Tea Leaves',
     'Syrups & Puree',
     'Powder',
     'Toppings',
     'Boba Pearls',
-    'Popping Pearls',
-    'Syrups',
     'Blends & Mixes',
-    'Resaurant Supplies'
   ];
 
 export const AllBrands: string[] = [
@@ -72,5 +68,10 @@ export const AllBrands: string[] = [
     'Vitamix',
     'Blendtec'
 ];
-   
+
+export const CategoryImagePaths: { [key: string]: string } = {
+    'Deli / Soup Container' : '/images/category/soup container.png',
+    'Fold-To-Go & Trays' : '/images/category/togo.png'
+  };
+     
 

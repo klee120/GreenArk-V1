@@ -209,7 +209,7 @@
   },
   {
     "id": "5",
-    "category": "Bowl",
+    "category": "Bowls",
     "name": "Bagasse Bowl Lids",
     "brand": "Karat Earth",
     "variation": [
@@ -768,7 +768,7 @@
   },
   {
     "id": "14",
-    "category": "Bowl",
+    "category": "Bowls",
     "name": "Bagasse Salad Bowls",
     "brand": "Karat Earth",
     "variation": [
@@ -865,7 +865,7 @@
   },
   {
     "id": "16",
-    "category": "Bowl",
+    "category": "Bowls",
     "name": "Bagasse Take Out Bowls",
     "brand": "Karat Earth",
     "variation": [
@@ -2783,7 +2783,7 @@
   },
   {
     "id": "58",
-    "category": "Resaurant Supplies",
+    "category": "Restaurant Supplies",
     "name": "Cooking Utensils",
     "brand": "",
     "variation": [
@@ -10651,7 +10651,7 @@
   },
   {
     "id": "209",
-    "category": "Popping Pearls",
+    "category": "Boba Pearls",
     "name": "Popping Pearls",
     "brand": "Tea Zone",
     "variation": [
@@ -12274,7 +12274,7 @@
   },
   {
     "id": "239",
-    "category": "Resaurant Supplies",
+    "category": "Restaurant Supplies",
     "name": "Store Supplies",
     "brand": "",
     "variation": [
@@ -12497,7 +12497,7 @@
   },
   {
     "id": "241",
-    "category": "Syrups",
+    "category": "Syrups & Puree",
     "name": "Sweeteners",
     "brand": "Tea Zone",
     "variation": [
@@ -14884,7 +14884,7 @@
   },
   {
     "id": "276",
-    "category": "Resaurant Supplies",
+    "category": "Restaurant Supplies",
     "name": "Total Clean Cleaners",
     "brand": "Total Clean",
     "variation": [
