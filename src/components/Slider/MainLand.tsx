@@ -31,7 +31,7 @@ const MainLand = () => {
                                     <div className="text-content w-full h-full flex flex-col items-center justify-center">
                                         <div className="text-sub-display text-white text-center">GreenArk Supply</div>
                                         <div className="text-display text-white text-center font-bold md:mt-5 mt-2">Sustainable Packaging. <br />Flavorful Possibilities.</div>
-                                        <Link href='/shop/products' className="button-main bg-white text-black hover:bg-black hover:text-white md:mt-8 mt-3">Shop Now</Link>
+                                        <Link href='/products' className="button-main bg-white text-black hover:bg-black hover:text-white md:mt-8 mt-3">Shop Now</Link>
                                     </div>
                                     <div className="sub-img absolute left-0 top-0 w-full h-full z-[-1]">
                                     <Image
