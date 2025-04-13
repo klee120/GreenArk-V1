@@ -42,10 +42,6 @@ const ModalWishlist = () => {
                                     </div>
                                     <div className=''>
                                         <div className="name text-button">{product.name}</div>
-                                        <div className="flex items-center gap-2 mt-2">
-                                            <div className="product-price text-title">${product.price}.00</div>
-                                            <div className="product-origin-price text-title text-secondary2"><del>${product.originPrice}.00</del></div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div className="remove-wishlist-btn caption1 font-semibold text-red underline cursor-pointer" onClick={() => removeFromWishlist(product.id)}>
