@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css/bundle';
 import 'swiper/css/effect-fade';
-import landingPageImage from '@/public/images/site/LANDING_PAGE.png';
+import landingPageImage from '@/site/LANDING_PAGE.png';
 
 
 const MainLand = () => {
