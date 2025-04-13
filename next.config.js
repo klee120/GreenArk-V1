@@ -5,7 +5,7 @@ const repo = 'GreenArk-V1'; // <<< replace with your GitHub repo name
 const nextConfig = {
     reactStrictMode: true,
     srcDir: 'src',
-    assetPrefix: isGithubPages ? `/${repo}/` : '',
+    assetPrefix: isGithubPages ? `/${repo}/.` : '',
     basePath: isGithubPages ? `/${repo}` : '',
 }
 
