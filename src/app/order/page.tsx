@@ -24,7 +24,7 @@ const Order = () => {
     quantity: 1,
   });
 
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState<{ category: string; product: string; variation: string; quantity: number }[]>([]);
   const [submitted, setSubmitted] = useState(false);
 
   const fabformUrl = 'https://fabform.io/f/dVn1hrc';
