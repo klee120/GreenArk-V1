@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import * as Icon from "@phosphor-icons/react/dist/ssr";
-import { ProductType, AllBrands, AllCategories, OtherBrands } from '@/type/ProductType'
+import { ProductType, AllBrands, AllCategories, OtherBrands, CategoryRedirect } from '@/type/ProductType'
 import Product from '../Product/Product';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css'
@@ -51,6 +51,16 @@ const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType, data
         setBrands([]);
     }
     }, [dataBrand]);
+
+    useEffect(() => {
+    if (dataType) {
+        const passedType = dataType.trim();
+        if (passedType in CategoryRedirect) {
+            setType(CategoryRedirect[passedType]);
+        }
+    } 
+    }, [dataType]);
+    
       
 
     // Filter product

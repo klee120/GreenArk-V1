@@ -97,6 +97,15 @@ export const OtherBrands: string[] = [
 export const CategoryImagePaths: { [key: string]: string } = {
     'Deli / Soup Container' : '/images/category/soup container.png',
     'Fold-To-Go & Trays' : '/images/category/togo.png'
-  };
+};
+
+export const CategoryRedirect: { [key: string]: string } = {
+    'Cups' : 'Cups & Lids',
+   'Sleeves' : 'Sleeves & Carriers',
+    'Fold-To-Go' : 'Fold-To-Go & Trays',
+    'Appliance' : 'Appliance & Tools',
+    'Syrups' : 'Syrups & Puree',
+    'Blends' : 'Blends & Mixes'
+};
      
 
