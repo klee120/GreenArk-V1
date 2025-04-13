@@ -13,7 +13,7 @@ const TrendingNow = () => {
     const router = useRouter()
 
     const handleTypeClick = (type: string) => {
-        router.push(`/shop/products?type=${type}`);
+        router.push(`/products?type=${type}`);
     };
 
     return (
