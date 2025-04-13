@@ -259,7 +259,7 @@ const Order = () => {
               {submitted ? (
                 <div className="text-center mt-10">
                   <h2 className="heading3 mb-4">Thank you!</h2>
-                  <p className="body1 text-secondary2">We've received your order and will be in touch soon.</p>
+                  <p className="body1 text-secondary2">We&#39;ve received your order and will be in touch soon.</p>
                 </div>
               ) : (
                 <form className="md:mt-6 mt-4" onSubmit={handleSubmit}>
