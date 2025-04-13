@@ -26,7 +26,7 @@ export default function HomeTen() {
             <NewsInsight data={blogData} start={0} limit={3} />
             <Brand />
             <Footer />
-            <ModalNewsletter />
+            {/* <ModalNewsletter /> */}
         </>
     )
 }

@@ -85,12 +85,12 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                                 <ul className='flex items-center gap-8 h-full'>
                                     <li className='h-full'>
                                         <Link
-                                            href="/shop/breadcrumb1"
+                                            href="/shop/products"
                                             className={`text-button-uppercase duration-300 h-full flex items-center justify-center ${pathname.includes('/shop/') ? 'active' : ''}`}
                                         >
                                             Products
                                         </Link>
-                                        <div className="mega-menu absolute top-[74px] left-0 bg-white w-screen">
+                                        {/* <div className="mega-menu absolute top-[74px] left-0 bg-white w-screen">
                                             <div className="container">
                                                 <div className="flex justify-between py-8">
                                                     <div className="nav-link basis-2/3 grid grid-cols-4 gap-y-8">
@@ -447,7 +447,7 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </li>
                                     <li className='h-full relative'>
                                         <Link href="/pages/about" className={`text-button-uppercase duration-300 h-full flex items-center justify-center ${pathname.includes('/pages/about') ? 'active' : ''}`}>

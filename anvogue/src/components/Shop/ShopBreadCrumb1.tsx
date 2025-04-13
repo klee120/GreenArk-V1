@@ -43,13 +43,13 @@ const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType }) =>
     let filteredData = data.filter(product => {
         let isDataTypeMatched = true;
         if (dataType) {
-            isDataTypeMatched = product.type === dataType
+            isDataTypeMatched = product.category === dataType
         }
 
         let isTypeMatched = true;
         if (type) {
             dataType = type
-            isTypeMatched = product.type === type;
+            isTypeMatched = product.category === type;
         }
 
         let isBrandMatched = true;
@@ -73,11 +73,11 @@ const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType }) =>
     if (filteredData.length === 0) {
         filteredData = [{
             id: 'no-data',
-            type: 'no-data',
+            category: 'no-data',
             name: 'no-data',
             brand: 'no-data',
             variation: [],
-            images: [],
+            images: 'no-data',
             description: 'no-data',
         }];
     }
@@ -127,17 +127,6 @@ const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType }) =>
                                     <div className='text-secondary2 capitalize'>{dataType === null ? 'Products' : dataType}</div>
                                 </div>
                             </div>
-                            {/* <div className="list-tab flex flex-wrap items-center justify-center gap-y-5 gap-8 lg:mt-[70px] mt-12 overflow-hidden">
-                                {['Food & Beverages','Restaurant Supplies', 'Appliance & Tool', 'General Supplies', 'Boba', 'Popping Pearls', 'Jellies', 'Syrups', 'Tea Leaves', 'Bowls', 'Plates', 'Cups & Lids', 'Fold-To-Go', 'Straws', 'Utensils', 'Warehouse Supplies', 'Gloves', 'Deli/Soup Containers', 'Salad Containers', 'Microwaveable Containers'].map((item, index) => (
-                                    <div
-                                        key={index}
-                                        className={`tab-item text-button-uppercase cursor-pointer has-line-before line-2px ${dataType === item ? 'active' : ''}`}
-                                        onClick={() => handleType(item)}
-                                    >
-                                        {item}
-                                    </div>
-                                ))}
-                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -158,7 +147,7 @@ const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType }) =>
                                         >
                                             <div className='text-secondary has-line-before hover:text-black capitalize'>{item}</div>
                                             <div className='text-secondary2'>
-                                                ({data.filter(dataItem => dataItem.type === AllCategories[idx]).length})
+                                                ({data.filter(dataItem => dataItem.category === AllCategories[idx]).length})
                                             </div>
                                         </div>
                                     ))}
@@ -190,26 +179,6 @@ const ShopBreadCrumb1: React.FC<Props> = ({ data, productPerPage, dataType }) =>
                             </div>
                         </div>
                         <div className="list-product-block lg:w-3/4 md:w-2/3 w-full md:pl-3">
-                            <div className="filter-heading flex items-center justify-between gap-5 flex-wrap">
-                                <div className="left flex has-line items-center flex-wrap gap-5">
-                                    <div className="choose-layout flex items-center gap-2">
-                                        <div className="item three-col w-8 h-8 border border-line rounded flex items-center justify-center cursor-pointer active">
-                                            <div className='flex items-center gap-0.5'>
-                                                <span className='w-[3px] h-4 bg-secondary2 rounded-sm'></span>
-                                                <span className='w-[3px] h-4 bg-secondary2 rounded-sm'></span>
-                                                <span className='w-[3px] h-4 bg-secondary2 rounded-sm'></span>
-                                            </div>
-                                        </div>
-                                        <Link href={'/shop/sidebar-list'} className="item row w-8 h-8 border border-line rounded flex items-center justify-center cursor-pointer">
-                                            <div className='flex flex-col items-center gap-0.5'>
-                                                <span className='w-4 h-[3px] bg-secondary2 rounded-sm'></span>
-                                                <span className='w-4 h-[3px] bg-secondary2 rounded-sm'></span>
-                                                <span className='w-4 h-[3px] bg-secondary2 rounded-sm'></span>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
 
                             <div className="list-filtered flex items-center gap-3 mt-4">
                                 <div className="total-product">

@@ -33,7 +33,7 @@ export default function HomePet() {
             <Instagram />
             <Brand />
             <Footer />
-            <ModalNewsletter />
+            {/* <ModalNewsletter /> */}
         </>
     )
 }

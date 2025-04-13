@@ -34,7 +34,7 @@ const SearchResult = () => {
     } else {
         filteredData = productData.filter((product) =>
             product.name.toLowerCase().includes(query.toLowerCase()) ||
-            product.type.toLowerCase().includes(query.toLowerCase())
+            product.category.toLowerCase().includes(query.toLowerCase())
         );
     }
 
@@ -42,25 +42,11 @@ const SearchResult = () => {
         filteredData = [{
             id: 'no-data',
             category: 'no-data',
-            type: 'no-data',
             name: 'no-data',
-            gender: 'no-data',
-            new: false,
-            sale: false,
-            rate: 0,
-            price: 0,
-            originPrice: 0,
             brand: 'no-data',
-            sold: 0,
-            quantity: 0,
-            quantityPurchase: 0,
-            sizes: [],
             variation: [],
-            thumbImage: [],
-            images: [],
+            images: 'no-data',
             description: 'no-data',
-            action: 'no-data',
-            slug: 'no-data'
         }];
     }
 

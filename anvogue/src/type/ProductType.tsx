@@ -1,6 +1,6 @@
 interface Variation {
     itemCode: string;
-    description: string;
+    itemName: string;
     packaging: string;
     soldBy: string;
     image: string;
@@ -8,17 +8,17 @@ interface Variation {
 
 export interface ProductType {
     id: string,
-    type: string,
+    category: string,
     name: string,
     brand: string,
     variation: Variation[],
-    images: Array<string>,
+    images: string,
     description: string,
 }
 
 // Define and export the categories array
 export const AllCategories: string[] = [
-    'Cups and Lids',
+    'Cups & Lids',
     'Straws',
     'Sleeves & Carriers',
     'Fold-To-Go & Trays',
@@ -32,7 +32,6 @@ export const AllCategories: string[] = [
     'Microwaveable Container',
     'Utensils',
     'Appliance & Tools',
-    'Cups & Lids',
     'Plates',
     'Bowl',
     'Tea Leaves',
@@ -43,34 +42,35 @@ export const AllCategories: string[] = [
     'Popping Pearls',
     'Syrups',
     'Blends & Mixes',
+    'Resaurant Supplies'
   ];
 
 export const AllBrands: string[] = [
     'Karat Packaging',
-        'Karat Earth',
-        'Tea Zone',
-        'Routin 1883',
-        "Caffe D'Amore",
-        "Caffe D'Vitta",
-        'Ghiradelli',
-        'Monin',
-        'Torani',
-        'Hollander',
-        'Big Train',
-        'Da Vinci ',
-        'Oregon Chai',
-        'ProGel',
-        'Cappuccine',
-        'MoCafe',
-        'Frostline',
-        'Dole',
-        'Cafvina',
-        'Califia',
-        'Pacific Foods',
-        'C&H',
-        'Total Clean',
-        'Vitamix',
-        'Blendtec'
+    'Karat Earth',
+    'Tea Zone',
+    'Routin 1883',
+    "Caffe D'Amore",
+    "Caffe D'Vitta",
+    'Ghiradelli',
+    'Monin',
+    'Torani',
+    'Hollander',
+    'Big Train',
+    'Da Vinci ',
+    'Oregon Chai',
+    'ProGel',
+    'Cappuccine',
+    'Teazone',
+    'Frostline',
+    'Dole',
+    'Cafvina',
+    'Califia',
+    'Pacific Foods',
+    'C&H',
+    'Total Clean',
+    'Vitamix',
+    'Blendtec'
 ];
    
 

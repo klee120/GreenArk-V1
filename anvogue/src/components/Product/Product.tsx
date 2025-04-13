@@ -96,19 +96,17 @@ const Product: React.FC<ProductProps> = ({ data, type }) => {
                 <div className={`product-item grid-type ${style}`}>
                     <div onClick={() => handleDetailProduct(data.id)} className="product-main cursor-pointer block">
                         <div className="product-thumb bg-white relative overflow-hidden rounded-2xl">
-                             <div className="product-img w-full h-full aspect-[3/4]">
+                             <div className="product-img w-full h-full aspect-[7/8]">
                                         {
-                                            data.images.map((img, index) => (
-                                                <Image
-                                                    key={index}
-                                                    src={img}
-                                                    width={500}
-                                                    height={500}
-                                                    priority={true}
-                                                    alt={data.name}
-                                                    className='w-full h-full object-cover duration-700'
-                                                />
-                                            ))
+                                        <Image
+                                            key={data.id}
+                                            src={data.images}
+                                            width={500}
+                                            height={500}
+                                            priority={true}
+                                            alt={data.name}
+                                            className='w-full object-cover duration-700'
+                                        />
                                         }
                             </div>
                             {/* {style === 'style-2' || style === 'style-4' ? (
@@ -305,17 +303,15 @@ const Product: React.FC<ProductProps> = ({ data, type }) => {
                                 <div className="product-main cursor-pointer flex lg:items-center sm:justify-between gap-7 max-lg:gap-5">
                                     <div onClick={() => handleDetailProduct(data.id)} className="product-thumb bg-white relative overflow-hidden rounded-2xl block max-sm:w-1/2">
                                         <div className="product-img w-full aspect-[3/4] rounded-2xl overflow-hidden">
-                                            {data.images.map((img, index) => (
-                                                <Image
-                                                    key={index}
-                                                    src={img}
-                                                    width={500}
-                                                    height={500}
-                                                    priority={true}
-                                                    alt={data.name}
-                                                    className='w-full h-full object-cover duration-700'
-                                                />
-                                            ))}
+                                            <Image
+                                                key={data.id}
+                                                src={data.images}
+                                                width={500}
+                                                height={500}
+                                                priority={true}
+                                                alt={data.name}
+                                                className='w-full h-full object-cover duration-700'
+                                            />
                                         </div>
                                     </div>
                                     {/* <div className='flex sm:items-center gap-7 max-lg:gap-4 max-lg:flex-wrap max-lg:w-full max-sm:flex-col max-sm:w-1/2'>

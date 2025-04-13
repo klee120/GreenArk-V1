@@ -30,18 +30,18 @@ const MainLand = () => {
                                 <div className="container w-full h-full">
                                     <div className="text-content w-full h-full flex flex-col items-center justify-center">
                                         <div className="text-sub-display text-white text-center">GreenArk Supply</div>
-                                        <div className="text-display text-white text-center md:mt-5 mt-2">Sustainable Packaging. <br />Flavorful Possibilities</div>
-                                        <Link href='/shop/breadcrumb-img' className="button-main bg-white text-black hover:bg-black hover:text-white md:mt-8 mt-3">Shop Now</Link>
+                                        <div className="text-display text-white text-center font-bold md:mt-5 mt-2">Sustainable Packaging. <br />Flavorful Possibilities.</div>
+                                        <Link href='/shop/products' className="button-main bg-white text-black hover:bg-black hover:text-white md:mt-8 mt-3">Shop Now</Link>
                                     </div>
                                     <div className="sub-img absolute left-0 top-0 w-full h-full z-[-1]">
-                                        <Image
-                                            src={'/images/slider/bg4-3.png'}
-                                            width={2560}
-                                            height={1080}
-                                            alt='bg4-3'
-                                            priority={true}
-                                            className='w-full h-full object-cover'
-                                        />
+                                    <Image
+                                        src={'/images/site/LANDING PAGE.png'}
+                                        width={1000}
+                                        height={1000}
+                                        alt='outerwear'
+                                        priority={true}
+                                        className='w-full object-cover'
+                                    />
                                     </div>
                                 </div>
                             </div>

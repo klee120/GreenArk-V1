@@ -14,7 +14,7 @@ const TrendingNow = () => {
     const router = useRouter()
 
     const handleTypeClick = (type: string) => {
-        router.push(`/shop/breadcrumb1?type=${type}`);
+        router.push(`/shop/products?type=${type}`);
     };
 
     return (
@@ -51,10 +51,10 @@ const TrendingNow = () => {
                             className='h-full'
                         >
                             <SwiperSlide>
-                                <div className="trending-item block relative cursor-pointer" onClick={() => handleTypeClick('t-shirt')}>
+                                <div className="trending-item block relative cursor-pointer" onClick={() => handleTypeClick('utensil')}>
                                     <div className="bg-img rounded-full overflow-hidden">
                                         <Image
-                                            src={'/images/avatar/1.png'}
+                                            src={'/images/site/LANDING PAGE.png'}
                                             width={1000}
                                             height={1000}
                                             alt='outerwear'
