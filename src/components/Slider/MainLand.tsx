@@ -35,7 +35,7 @@ const MainLand = () => {
                                     </div>
                                     <div className="sub-img absolute left-0 top-0 w-full h-full z-[-1]">
                                     <Image
-                                        src={'/images/site/LANDING PAGE.PNG'}
+                                        src={'/images/site/LANDING_PAGE.png'}
                                         width={1000}
                                         height={1000}
                                         alt='outerwear'
