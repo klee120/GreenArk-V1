@@ -100,21 +100,60 @@ const Order = () => {
     setCart((prev) => prev.filter((_, i) => i !== index));
   };
 
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+
+  //   const payload = {
+  //     ...customerInfo,
+  //     cart,
+  //   };
+
+  //   try {
+  //     const response = await fetch(fabformUrl, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(payload),
+  //     });
+
+  //     if (response.ok) {
+  //       console.log('Form submitted successfully!');
+  //       setSubmitted(true);
+  //       setCustomerInfo({ username: '', email: '', message: '' });
+  //       setCart([]);
+  //     } else {
+  //       console.error('Form submission failed');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error submitting the form:', error);
+  //   }
+  // };
+
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const payload = {
-      ...customerInfo,
-      cart,
+      fullName: customerInfo.username,
+      email: customerInfo.email,
+      message: customerInfo.message,
+      // cart: JSON.stringify(cart),
     };
+
+    // Convert payload to URLSearchParams (application/x-www-form-urlencoded format)
+    const formBody = new URLSearchParams();
+    (Object.entries(payload) as [string, string][]).forEach(([key, value]) => {
+      formBody.append(key, value);
+    });    
 
     try {
       const response = await fetch(fabformUrl, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded', 
         },
-        body: JSON.stringify(payload),
+        body: formBody.toString(),
       });
 
       if (response.ok) {
@@ -129,6 +168,7 @@ const Order = () => {
       console.error('Error submitting the form:', error);
     }
   };
+
 
   const products = productData;
 
