@@ -57,7 +57,7 @@ const TrendingNow = () => {
                                 >
                                 <div className="bg-img rounded-full overflow-hidden">
                                     <Image
-                                    src={CategoryImagePaths[category] || `/GreenArk-V1/public/images/category/${category}.png`}
+                                    src={CategoryImagePaths[category] || `/images/category/${category}.png`}
                                     width={1000}
                                     height={1000}
                                     alt={category}

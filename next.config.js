@@ -1,12 +1,20 @@
-/** @type {import('next').NextConfig} */
-const isGithubPages = process.env.NODE_ENV === 'production';
-const repo = 'GreenArk-V1';
+// /** @type {import('next').NextConfig} */
+// const isGithubPages = process.env.NODE_ENV === 'production';
+// const repo = 'GreenArk-V1';
 
+// const nextConfig = {
+//     reactStrictMode: true,
+//     srcDir: 'src',
+//     assetPrefix: isGithubPages ? `/${repo}/` : '',
+//     basePath: isGithubPages ? `/${repo}` : '',
+// }
+
+// module.exports = nextConfig;
+
+/** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
     srcDir: 'src',
-    assetPrefix: isGithubPages ? `/${repo}/` : '',
-    basePath: isGithubPages ? `/${repo}` : '',
 }
 
 module.exports = nextConfig;
