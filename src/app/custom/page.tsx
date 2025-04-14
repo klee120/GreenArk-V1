@@ -4,6 +4,7 @@ import MenuOne from '@/components/Header/Menu/MenuOne'
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import Footer from '@/components/Footer/Footer'
 import * as Icon from "@phosphor-icons/react/dist/ssr";
+import Image from 'next/image';
 
 const Faqs = () => {
     const [activeQuestions, setActiveQuestions] = useState<string[]>([])
@@ -33,7 +34,47 @@ const Faqs = () => {
                         </div>
                     </div>
                     <div className="text flex items-center justify-center">
-                        <div className="content md:w-5/6 w-full mt-5">
+                        <div className="list-img grid sm:grid-cols-4 gap-[30px] pt-10">
+                            <div className="bg-img">
+                                <Image
+                                    src={'/images/other/about-us1.png'}
+                                    width={2000}
+                                    height={3000}
+                                    alt='bg-img'
+                                    className='w-full rounded-[30px]'
+                                />
+                            </div>
+                            <div className="bg-img">
+                                <Image
+                                    src={'/images/other/about-us2.png'}
+                                    width={2000}
+                                    height={3000}
+                                    alt='bg-img'
+                                    className='w-full rounded-[30px]'
+                                />
+                            </div>
+                            <div className="bg-img">
+                                <Image
+                                    src={'/images/other/about-us2.png'}
+                                    width={2000}
+                                    height={3000}
+                                    alt='bg-img'
+                                    className='w-full rounded-[30px]'
+                                />
+                            </div>
+                            <div className="bg-img">
+                                <Image
+                                    src={'/images/other/about-us2.png'}
+                                    width={2000}
+                                    height={3000}
+                                    alt='bg-img'
+                                    className='w-full rounded-[30px]'
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="text flex items-center justify-center">
+                        <div className="content md:w-5/6 w-full mt-10">
                             <div className="heading3 text-center">FAQs</div>
                         </div>
                     </div>
