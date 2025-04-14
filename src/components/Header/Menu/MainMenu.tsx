@@ -121,7 +121,7 @@ const MainMenu: React.FC<Props> = ({ props }) => {
                                     />
                                     <input
                                         type="text"
-                                        placeholder="What are you looking for?"
+                                        placeholder="Search"
                                         className="h-10 w-full rounded-lg border border-line caption2 pl-9 pr-4"
                                         value={searchKeyword}
                                         onChange={(e) => setSearchKeyword(e.target.value)}
