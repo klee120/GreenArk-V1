@@ -12,7 +12,8 @@ import productData from '@/data/Product.json'
 
 const Order = () => {
   const [customerInfo, setCustomerInfo] = useState({
-    username: '',
+    first_name: '',
+    last_name: '',
     email: '',
     message: '',
   });
@@ -100,75 +101,14 @@ const Order = () => {
     setCart((prev) => prev.filter((_, i) => i !== index));
   };
 
-  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-
-  //   const payload = {
-  //     ...customerInfo,
-  //     cart,
-  //   };
-
-  //   try {
-  //     const response = await fetch(fabformUrl, {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(payload),
-  //     });
-
-  //     if (response.ok) {
-  //       console.log('Form submitted successfully!');
-  //       setSubmitted(true);
-  //       setCustomerInfo({ username: '', email: '', message: '' });
-  //       setCart([]);
-  //     } else {
-  //       console.error('Form submission failed');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error submitting the form:', error);
-  //   }
-  // };
-
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const payload = {
-      fullName: customerInfo.username,
-      email: customerInfo.email,
-      message: customerInfo.message,
-      // cart: JSON.stringify(cart),
-    };
-
-    // Convert payload to URLSearchParams (application/x-www-form-urlencoded format)
-    const formBody = new URLSearchParams();
-    (Object.entries(payload) as [string, string][]).forEach(([key, value]) => {
-      formBody.append(key, value);
-    });    
-
-    try {
-      const response = await fetch(fabformUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded', 
-        },
-        body: formBody.toString(),
-      });
-
-      if (response.ok) {
-        console.log('Form submitted successfully!');
-        setSubmitted(true);
-        setCustomerInfo({ username: '', email: '', message: '' });
-        setCart([]);
-      } else {
-        console.error('Form submission failed');
-      }
-    } catch (error) {
-      console.error('Error submitting the form:', error);
-    }
+  const formatCart = (cart: { category: string; product: string; variation: string; quantity: number }[]) => {
+    if (cart.length === 0) return "Cart is empty.";
+  
+    return cart.map(item => 
+      `- ${item.quantity}x ${item.product} (${item.variation})`
+    ).join('\n');
   };
-
+  
 
   const products = productData;
 
@@ -302,45 +242,67 @@ const Order = () => {
                   <p className="body1 text-secondary2">We&#39;ve received your order and will be in touch soon.</p>
                 </div>
               ) : (
-                <form className="md:mt-6 mt-4" onSubmit={handleSubmit}>
-                  {/* Customer Info */}
-                  <div className='grid sm:grid-cols-2 grid-cols-1 gap-4 gap-y-5'>
-                    <input
-                      className="border-line px-4 py-3 w-full rounded-lg"
-                      id="username"
-                      type="text"
-                      placeholder="Your Name *"
-                      required
-                      value={customerInfo.username}
-                      onChange={handleCustomerChange}
-                    />
-                    <input
-                      className="border-line px-4 py-3 w-full rounded-lg"
-                      id="email"
-                      type="email"
-                      placeholder="Your Email *"
-                      required
-                      value={customerInfo.email}
-                      onChange={handleCustomerChange}
-                    />
-                  </div>
-
-
-                  {/* Additional Message */}
-                  <textarea
-                    id="message"
-                    className="border-line px-4 pt-3 pb-3 w-full rounded-lg mt-6"
-                    rows={3}
-                    placeholder="Additional notes (optional)"
-                    value={customerInfo.message}
+                <form method="POST" action="https://fabform.io/f/dVn1hrc" className="md:mt-6 mt-4">
+                {/* Customer Info */}
+                <div className='grid sm:grid-cols-2 grid-cols-1 gap-4 gap-y-5'>
+                  <input
+                    className="border-line px-4 py-3 w-full rounded-lg"
+                    id="first_name"
+                    name="first_name"
+                    type="text"
+                    placeholder="First Name *"
+                    required
+                    value={customerInfo.first_name}
                     onChange={handleCustomerChange}
                   />
+                  <input
+                    className="border-line px-4 py-3 w-full rounded-lg"
+                    id="last_name"
+                    name="last_name"
+                    type="text"
+                    placeholder="Last Name *"
+                    required
+                    value={customerInfo.last_name}
+                    onChange={handleCustomerChange}
+                  />
+                </div>
 
-                  {/* Final Submit */}
-                  <div className="block-button md:mt-6 mt-4">
-                    <button className="button-main">Submit Order</button>
-                  </div>
-                </form>
+                {/* Email */}
+                <input
+                  className="border-line px-4 py-3 w-full rounded-lg mt-6"
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="Last Name *"
+                  required
+                  value={customerInfo.email}
+                  onChange={handleCustomerChange}
+                />
+
+                {/* Message */}
+                <textarea
+                id="message"
+                  name="message"
+                  className="border-line px-4 pt-3 pb-3 w-full rounded-lg mt-6"
+                  rows={3}
+                  placeholder="Additional notes (optional)"
+                  value={customerInfo.message}
+                  onChange={handleCustomerChange}
+                />
+
+                {/* Cart Data */}
+                <input
+                  type="hidden"
+                  name="cart"
+                  value={formatCart(cart)}
+                />
+
+                {/* Final Submit */}
+                <div className="block-button md:mt-6 mt-4">
+                  <button className="button-main">Submit Order</button>
+                </div>
+              </form>
+
               )}
 
             </div>
