@@ -95,8 +95,8 @@ export const OtherBrands: string[] = [
 ];
 
 export const CategoryImagePaths: { [key: string]: string } = {
-    'Deli / Soup Container' : '/images/category/soup container.png',
-    'Fold-To-Go & Trays' : '/images/category/togo.png'
+    'Deli / Soup Container' : '/images/category/Soup Container.png',
+    'Fold-To-Go & Trays' : '/images/category/Togo.png'
 };
 
 export const CategoryRedirect: { [key: string]: string } = {

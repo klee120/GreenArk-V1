@@ -84,7 +84,7 @@ const MainMenu: React.FC<Props> = ({ props }) => {
                         <li className='h-full flex items-center justify-center logo'>
                         <Link href="/" className="flex items-center gap-2 heading4">
                             <Image
-                            src="/images/icon/Icon.png"
+                            src="/images/icon/icon.png"
                             width={50}
                             height={50}
                             alt="bg-img"
