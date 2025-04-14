@@ -113,6 +113,11 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                                             Order Here
                                         </Link>
                                     </li>
+                                    <li className='h-full relative'>
+                                        <Link href="/custom" className={`text-button-uppercase duration-300 h-full flex items-center justify-center ${pathname.includes('/custom') ? 'active' : ''}`}>
+                                            Custom Orders
+                                        </Link>
+                                    </li>
                                     <div className="right flex gap-12 z-[1]">
                                         <div className="list-action flex items-center gap-4">
                                             <div className="relative w-full">
