@@ -273,7 +273,7 @@ const Order = () => {
                   id="email"
                   type="email"
                   name="email"
-                  placeholder="Last Name *"
+                  placeholder="Email *"
                   required
                   value={customerInfo.email}
                   onChange={handleCustomerChange}
